@@ -1,6 +1,12 @@
 // const backend='http://localhost:80'
 const backend='https://www.openscreenshot.com'
 
+if(!localStorage.created){
+	window.open('https://www.openscreenshot.com')
+}
+localStorage.created=(new Date()).valueOf()
+
+
 chrome.browserAction.onClicked.addListener(screenshot)
 
 function screenshot(){
